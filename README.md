@@ -1,67 +1,64 @@
-# pyke-snake
-Battlesnake AI for play.battlesnake.io
+# pyke snake
+Battlesnake AI for play.battlesnake.io written in python.
 
-A simple [Battlesnake AI](http://battlesnake.io) written in Python. 
+Visit [https://github.com/battlesnakeio/community/blob/master/starter-snakes.md](https://github.com/battlesnakeio/community/blob/master/starter-snakes.md) for API documentation and instructions for running AI.
 
-Visit [https://github.com/battlesnakeio/community/blob/master/starter-snakes.md](https://github.com/battlesnakeio/community/blob/master/starter-snakes.md) for API documentation and instructions for running your AI.
+This AI client uses the [bottle web framework](http://bottlepy.org/docs/dev/index.html) to serve requests and the [gunicorn web server](http://gunicorn.org/) for running bottle on Heroku (if deployed there). Dependencies are listed in [requirements.txt](requirements.txt).
 
-This AI client uses the [bottle web framework](http://bottlepy.org/docs/dev/index.html) to serve requests and the [gunicorn web server](http://gunicorn.org/) for running bottle on Heroku. Dependencies are listed in [requirements.txt](requirements.txt).
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-#### You will need...
+#### Prerequisites
 
 * a working Python 2.7 development environment ([getting started guide](http://hackercodex.com/guide/python-development-environment-on-mac-osx/))
-* experience [deploying Python apps to Heroku](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
 * [pip](https://pip.pypa.io/en/latest/installing.html) to install Python dependencies
 
 ## Running the Snake Locally
 
-1) [Fork this repo](https://github.com/battlesnakeio/starter-snake-python/fork).
+1) Clone repo to your development environment:
 
-2) Clone repo to your development environment:
+Using SSH
+```bash
+git clone git@github.com:mroesli/pyke-snake.git
 ```
-git clone git@github.com:<your github username>/starter-snake-python.git
+
+Using HTTPS
+```bash
+git clone https://github.com/mroesli/pyke-snake.git
+```
+
+2) Change your directory to pyke-snake:
+```bash
+cd pyke-snake
 ```
 
 3) Install dependencies using [pip](https://pip.pypa.io/en/latest/installing.html):
-```
+```bash
 pip install -r requirements.txt
 ```
 
-4) Run local server:
-```
+4) Run local server for snake:
+```bash
 python app/main.py
 ```
 
-5) Test your snake by sending a curl to the running snake
-```
+5) After doing the previous step, we will have a snake running on http://localhost:8080. We can test if our snake is running by opening up another terminal, and sending a curl to the running snake:
+```bash
 curl -XPOST -H 'Content-Type: application/json' -d '{ "hello": "world"}' http://localhost:8080/start
 ```
 
-## Deploying to Heroku
+6) To terminate the snake, go to the terminal running the snake, and stop the process using the following command:
+```bash
+Ctrl+C
+```
+## Running the engine
 
-1) Create a new Heroku app:
+1) Assuming snake is already running locally, open up another terminal.
+2) Open up pyke-snake and run the engine using the following:
+```bash
+./engine/engine dev
 ```
-heroku create [APP_NAME]
-```
+3) Open up the engine in any browser through this link: http://localhost:3010.
+4) You will be presented with a screen to configure the board and also input the link to the running snake.
+5) If you followed the previous steps, the snake should be running on https://localhost:8080. Use this as the "Snake URL" and name the snake with whatever name you want.
+6) Add as many snakes as possible with known URL's to the game as you want.
+7) Click "Start".
+8) You should now be able to simulate a game by clicking "play". Have fun!
 
-2) Deploy code to Heroku servers:
-```
-git push heroku master
-```
-
-3) Open Heroku app in browser:
-```
-heroku open
-```
-or visit [http://APP_NAME.herokuapp.com](http://APP_NAME.herokuapp.com).
-
-4) View server logs with the `heroku logs` command:
-```
-heroku logs --tail
-```
-
-## Questions?
-
-Email [battlesnake@sendwithus.com](mailto:battlesnake@sendwithus.com), or tweet [@send_with_us](http://twitter.com/send_with_us).
