@@ -39,7 +39,7 @@ pip install -r requirements.txt
 python app/main.py
 ```
 
-5) After doing the previous step, we will have a snake running on http://localhost:8080. We can test if our snake is running by opening up another terminal, and sending a curl to the running snake:
+5) After doing the previous step, we will have a snake running on http://localhost:8080 (Check the link for API documentation). We can test if our snake is running by opening up another terminal, and sending a curl to the running snake:
 ```bash
 curl -XPOST -H 'Content-Type: application/json' -d '{ "hello": "world"}' http://localhost:8080/start
 ```
@@ -51,14 +51,18 @@ Ctrl+C
 ## Running the engine
 
 1) Assuming snake is already running locally, open up another terminal.
-2) Open up pyke-snake and run the engine using the following:
+2) Open up pyke-snake and change your directory to the engine:
 ```bash
-./engine/engine dev
+cd engine
 ```
-3) Open up the engine in any browser through this link: http://localhost:3010.
-4) You will be presented with a screen to configure the board and also input the link to the running snake.
-5) If you followed the previous steps, the snake should be running on https://localhost:8080. Use this as the "Snake URL" and name the snake with whatever name you want.
-6) Add as many snakes as possible with known URL's to the game as you want.
-7) Click "Start".
-8) You should now be able to simulate a game by clicking "play". Have fun!
+1) Run the engine using the following:
+```bash
+./engine dev
+```
+4) Open up the engine in any browser through this link: http://localhost:3010.
+5) You will be presented with a screen to configure the board and also input the link to the running snake.
+6) If you followed the previous steps, the snake should be running on https://localhost:8080. Use this as the "Snake URL" and name the snake with whatever name you want.
+7) Add as many snakes as possible with known URL's to the game as you want.
+8) Click "Start".
+9) You should now be able to simulate a game by clicking "play". Have fun!
 
