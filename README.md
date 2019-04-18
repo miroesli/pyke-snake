@@ -5,6 +5,10 @@ Visit [https://github.com/battlesnakeio/community/blob/master/starter-snakes.md]
 
 This AI client uses the [bottle web framework](http://bottlepy.org/docs/dev/index.html) to serve requests and the [gunicorn web server](http://gunicorn.org/) for running bottle on Heroku (if deployed there). Dependencies are listed in [requirements.txt](requirements.txt).
 
+<!-- ## Sample Run of Snake -->
+
+
+
 #### Prerequisites
 
 * a working Python 2.7 development environment ([getting started guide](http://hackercodex.com/guide/python-development-environment-on-mac-osx/))
