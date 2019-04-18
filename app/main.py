@@ -1,9 +1,25 @@
+'''
+Authors: Michail Roesli, Juan Comish
+Date Created: April 15th 2019
+Details: Battlesnake for 2020 tournament
+'''
+
+# ========== IMPORTS ==========
+
 import json
 import os
 import random
 import bottle
 
 from api import ping_response, start_response, move_response, end_response
+
+# ========== GLOBALS & STRUCTURES ==========
+
+
+# ========= FUNCTIONS ==========
+
+
+# ========= Main Request and Response Functions ==========
 
 @bottle.route('/')
 def index():
