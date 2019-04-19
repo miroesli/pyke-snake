@@ -1,11 +1,13 @@
 # pyke snake
+[![Maintainability](https://api.codeclimate.com/v1/badges/b44af9bce3d383e8cb60/maintainability)](https://codeclimate.com/github/mroesli/pyke-snake/maintainability)
+
 Battlesnake AI for play.battlesnake.io written in python.
 
 Visit [https://github.com/battlesnakeio/community/blob/master/starter-snakes.md](https://github.com/battlesnakeio/community/blob/master/starter-snakes.md) for API documentation and instructions for running AI.
 
 This AI client uses the [bottle web framework](http://bottlepy.org/docs/dev/index.html) to serve requests and the [gunicorn web server](http://gunicorn.org/) for running bottle on Heroku (if deployed there). Dependencies are listed in [requirements.txt](requirements.txt).
 
-<!-- ## Sample Run of Snake -->
+<!-- ### Sample Battle -->
 
 
 
