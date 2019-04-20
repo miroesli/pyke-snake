@@ -14,7 +14,7 @@ import bottle
 from api import ping_response, start_response, move_response, end_response
 
 # ========== GLOBALS & STRUCTURES ==========
-
+headposition = (0, 0)
 
 # ========= FUNCTIONS ==========
 
@@ -56,10 +56,17 @@ def start():
             request's data if necessary.
     """
     print(json.dumps(data))
+    # print("TEST: ", bottle.request.body.turn)
 
-    color = "#00FF00"
+    color = "#FF9A00"
+    # Head types:
+    # regular, beluga, bendr, dead, evil, fang, pixel, safe, sand-worm, shades, silly, smile, tongue
+    headType = "sand-worm"
+    # Tail types:
+    # regular, block-bum, bolt, curled, fat-rattle, freckled, hook, pixel, round-bum, sharp, skinny, small-rattle
+    tailType = "freckled"
 
-    return start_response(color)
+    return start_response(color, headType, tailType)
 
 
 @bottle.post('/move')
@@ -70,9 +77,10 @@ def move():
     TODO: Using the data from the endpoint request object, your
             snake AI must choose a direction to move in.
     """
-    print(json.dumps(data))
+    # print(json.dumps(data))
 
     directions = ['up', 'down', 'left', 'right']
+    
     direction = random.choice(directions)
 
     return move_response(direction)
