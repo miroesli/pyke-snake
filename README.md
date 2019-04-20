@@ -9,8 +9,6 @@ This AI client uses the [bottle web framework](http://bottlepy.org/docs/dev/inde
 
 <!-- ### Sample Battle -->
 
-
-
 #### Prerequisites
 
 * a working Python 2.7 development environment ([getting started guide](http://hackercodex.com/guide/python-development-environment-on-mac-osx/))
